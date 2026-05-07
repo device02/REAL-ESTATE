@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jgold Realty — Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+    <a class="logo" href="index.html">JGold<span>Properties</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="properties.html" class="active">Properties</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="about.html">About</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <div class="section-tag">Our Listings</div>
+    <h1>Premium <em>Properties</em></h1>
+    <p>Discover exceptional homes, apartments and commercial spaces</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProps(this, 'all')">All</button>
+    <button class="filter-btn" onclick="filterProps(this, 'sale')">For Sale</button>
+    <button class="filter-btn" onclick="filterProps(this, 'rent')">For Rent</button>
+    <button class="filter-btn" onclick="filterProps(this, 'commercial')">Commercial</button>
+    <button class="filter-btn" onclick="filterProps(this, 'land')">Land</button>
+</div>
+
+<!-- LISTINGS -->
+<div class="listings-grid" id="listingsGrid">
+    <div class="property-card" data-type="sale">
+        <div class="property-img">
+            <div class="property-img-bg" style="background: linear-gradient(135deg, #1a2a1a, #2d4a2d); display:flex; align-items:center; justify-content:center; font-size:60px;">🏡</div>
+            <span class="property-badge">For Sale</span>
+        </div>
+        <div class="property-body">
+            <div class="property-price">₦85,000,000</div>
+            <div class="property-name">Luxury 4-Bedroom Duplex</div>
+            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Lekki Phase 1, Lagos</div>
+            <div class="property-meta">
+                <span><i class="fas fa-bed"></i> 4 Beds</span>
+                <span><i class="fas fa-bath"></i> 3 Baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 320 m²</span>
+            </div>
+        </div>
+    </div>
+    <div class="property-card" data-type="rent">
+        <div class="property-img">
+            <div class="property-img-bg" style="background: linear-gradient(135deg, #1a1a2a, #2d2d4a); display:flex; align-items:center; justify-content:center; font-size:60px;">🏢</div>
+            <span class="property-badge">For Rent</span>
+        </div>
+        <div class="property-body">
+            <div class="property-price">₦4,500,000 / yr</div>
+            <div class="property-name">Modern 3-Bedroom Apartment</div>
+            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Victoria Island, Lagos</div>
+            <div class="property-meta">
+                <span><i class="fas fa-bed"></i> 3 Beds</span>
+                <span><i class="fas fa-bath"></i> 2 Baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 180 m²</span>
+            </div>
+        </div>
+    </div>
+    <div class="property-card" data-type="commercial">
+        <div class="property-img">
+            <div class="property-img-bg" style="background: linear-gradient(135deg, #2a1a1a, #4a2d2d); display:flex; align-items:center; justify-content:center; font-size:60px;">🏪</div>
+            <span class="property-badge">Commercial</span>
+        </div>
+        <div class="property-body">
+            <div class="property-price">₦12,000,000 / yr</div>
+            <div class="property-name">Premium Office Space</div>
+            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Wuse 2, Abuja</div>
+            <div class="property-meta">
+                <span><i class="fas fa-building"></i> 3 Floors</span>
+                <span><i class="fas fa-car"></i> 20 Parking</span>
+                <span><i class="fas fa-ruler-combined"></i> 1200 m²</span>
+            </div>
+        </div>
+    </div>
+    <div class="property-card" data-type="land">
+        <div class="property-img">
+            <div class="property-img-bg" style="background: linear-gradient(135deg, #1a2a1a, #3a4a1a); display:flex; align-items:center; justify-content:center; font-size:60px;">🌿</div>
+            <span class="property-badge">Land</span>
+        </div>
+        <div class="property-body">
+            <div class="property-price">₦45,000,000</div>
+            <div class="property-name">Prime Residential Land</div>
+            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Ikoyi, Lagos</div>
+            <div class="property-meta">
+                <span><i class="fas fa-ruler-combined"></i> 1,200 sqm</span>
+                <span><i class="fas fa-file-alt"></i> C of O</span>
+            </div>
+        </div>
+    </div>
+    <div class="property-card" data-type="sale">
+        <div class="property-img">
+            <div class="property-img-bg" style="background: linear-gradient(135deg, #1a1a1a, #3a3a1a); display:flex; align-items:center; justify-content:center; font-size:60px;">🏠</div>
+            <span class="property-badge">For Sale</span>
+        </div>
+        <div class="property-body">
+            <div class="property-price">₦120,000,000</div>
+            <div class="property-name">5-Bedroom Detached House</div>
+            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Maitama, Abuja</div>
+            <div class="property-meta">
+                <span><i class="fas fa-bed"></i> 5 Beds</span>
+                <span><i class="fas fa-bath"></i> 5 Baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 500 m²</span>
+            </div>
+        </div>
+    </div>
+    <div class="property-card" data-type="rent">
+        <div class="property-img">
+            <div class="property-img-bg" style="background: linear-gradient(135deg, #1a1a2a, #1a2a3a); display:flex; align-items:center; justify-content:center; font-size:60px;">🏘</div>
+            <span class="property-badge">For Rent</span>
+        </div>
+        <div class="property-body">
+            <div class="property-price">₦2,800,000 / yr</div>
+            <div class="property-name">2-Bedroom Serviced Apartment</div>
+            <div class="property-location"><i class="fas fa-map-marker-alt"></i> GRA, Port Harcourt</div>
+            <div class="property-meta">
+                <span><i class="fas fa-bed"></i> 2 Beds</span>
+                <span><i class="fas fa-bath"></i> 2 Baths</span>
+                <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-brand">
+        <a class="logo" href="index.html">JGold<span>Properties</span></a>
+        <p>Nigeria's most trusted real estate platform, connecting buyers and sellers since 2012.</p>
+    </div>
+    <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+            <li><a>Lagos, Victoria Island</a></li>
+            <li><a>+234 800 000 0000</a></li>
+            <li><a>info@jgold.ng</a></li>
+        </ul>
+    </div>
+</footer>
+<div class="footer-bottom">© 2024 JGold Properties. All rights reserved.</div>
+
+<script src="main.js"></script>
+</body>
+</html>
